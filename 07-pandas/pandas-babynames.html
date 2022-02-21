@@ -1,0 +1,6192 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pandas exercises &#8212; PHY 546: Python for Scientific Computing</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">PHY 546: Python for Scientific Computing</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction.html">
+   PHY 546: Python for Scientific Computing
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-python/installing.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-python/w1-jupyter.html">
+   Jupyter
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-python/basics.html">
+   Python Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python/w1-python-datatypes.html">
+     Basic Python Datatypes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python/w2-python-advanced-datatypes.html">
+     Advanced Datatypes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python/w2-python-control-flow.html">
+     Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python/w2-python-exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-python/functions-classes.html">
+   Functions and Classes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python/w3-python-functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python/w3-python-exercises.html">
+     Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python/w4-python-classes.html">
+     Classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python/w4-python-modules.html">
+     Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python/w4-python-exercises.html">
+     Practicing Classes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-python/misc.html">
+   Miscellaneous
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python/w3-python-exceptions.html">
+     Exceptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python/python-io.html">
+     Print
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python/w5-python-more-examples.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Arrays
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-numpy/numpy.html">
+   NumPy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-numpy/numpy-basics.html">
+     NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-numpy/numpy-exercises.html">
+     NumPy exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Scientific Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04-matplotlib/matplotlib.html">
+   matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-matplotlib/matplotlib-basics.html">
+     matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-matplotlib/matplotlib-exercises.html">
+     matplotlib exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-scipy/scipy.html">
+   SciPy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-scipy/scipy-basics.html">
+     SciPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-scipy/scipy-exercises.html">
+     Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-scipy/scipy-exercises-2.html">
+     Linear Algebra
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06-sympy/sympy.html">
+   SymPy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-sympy/sympy-examples.html">
+     SymPy examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-sympy/sympy-exercises.html">
+     SymPy Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/07-pandas/pandas-babynames.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/sbu-python-class/python-science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/sbu-python-class/python-science/issues/new?title=Issue%20on%20page%20%2F07-pandas/pandas-babynames.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sbu-python-class/python-science/main?urlpath=tree/content/07-pandas/pandas-babynames.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/sbu-python-class/python-science/blob/main/content/07-pandas/pandas-babynames.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   pandas exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-of-births">
+     number of births
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#all-data-sets">
+     all data sets
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pivot-tables">
+     pivot tables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply-and-new-columns">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .apply()
+      </span>
+     </code>
+     and new columns
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q1-sanity-check">
+     Q1: Sanity check
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q2-split-by-sex">
+     Q2: split by sex
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-analysis">
+     More analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q3-unique-names">
+     Q3: unique names
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q4-gender-neutral-names">
+     Q4: gender neutral names
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q5-name-diversity">
+     Q5: name diversity
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>pandas exercises</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   pandas exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-of-births">
+     number of births
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#all-data-sets">
+     all data sets
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pivot-tables">
+     pivot tables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply-and-new-columns">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .apply()
+      </span>
+     </code>
+     and new columns
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q1-sanity-check">
+     Q1: Sanity check
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q2-split-by-sex">
+     Q2: split by sex
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-analysis">
+     More analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q3-unique-names">
+     Q3: unique names
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q4-gender-neutral-names">
+     Q4: gender neutral names
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q5-name-diversity">
+     Q5: name diversity
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="pandas-exercises">
+<h1>pandas exercises<a class="headerlink" href="#pandas-exercises" title="Permalink to this headline">¶</a></h1>
+<p>We’ll use the sample datset from the Social Secury Administration on baby names:
+<a class="reference external" href="https://www.ssa.gov/oact/babynames/limits.html">https://www.ssa.gov/oact/babynames/limits.html</a></p>
+<p>Download the “National” version and unzip it.  There will be one file for each year.</p>
+<p>This example follows the <em>Python for Data Analysis</em> book closely</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2263</span><span class="o">/</span><span class="mf">2145150660.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s start by reading in just a single dataset, for the first year available (1880).  We give the names of the colums here.  The index will just be the line / record number in the file (not really important for us)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names_1880</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;babynames/yob1880.txt&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">,</span> <span class="s2">&quot;births&quot;</span><span class="p">])</span>
+<span class="n">names_1880</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>births</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Mary</td>
+      <td>F</td>
+      <td>7065</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Anna</td>
+      <td>F</td>
+      <td>2604</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Emma</td>
+      <td>F</td>
+      <td>2003</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Elizabeth</td>
+      <td>F</td>
+      <td>1939</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Minnie</td>
+      <td>F</td>
+      <td>1746</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Margaret</td>
+      <td>F</td>
+      <td>1578</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Ida</td>
+      <td>F</td>
+      <td>1472</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Alice</td>
+      <td>F</td>
+      <td>1414</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Bertha</td>
+      <td>F</td>
+      <td>1320</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Sarah</td>
+      <td>F</td>
+      <td>1288</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Annie</td>
+      <td>F</td>
+      <td>1258</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Clara</td>
+      <td>F</td>
+      <td>1226</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Ella</td>
+      <td>F</td>
+      <td>1156</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Florence</td>
+      <td>F</td>
+      <td>1063</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Cora</td>
+      <td>F</td>
+      <td>1045</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Martha</td>
+      <td>F</td>
+      <td>1040</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Laura</td>
+      <td>F</td>
+      <td>1012</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Nellie</td>
+      <td>F</td>
+      <td>995</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Grace</td>
+      <td>F</td>
+      <td>982</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Carrie</td>
+      <td>F</td>
+      <td>949</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Maude</td>
+      <td>F</td>
+      <td>858</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Mabel</td>
+      <td>F</td>
+      <td>808</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Bessie</td>
+      <td>F</td>
+      <td>796</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Jennie</td>
+      <td>F</td>
+      <td>793</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Gertrude</td>
+      <td>F</td>
+      <td>787</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Julia</td>
+      <td>F</td>
+      <td>783</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Hattie</td>
+      <td>F</td>
+      <td>769</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Edith</td>
+      <td>F</td>
+      <td>768</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Mattie</td>
+      <td>F</td>
+      <td>704</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Rose</td>
+      <td>F</td>
+      <td>700</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1970</th>
+      <td>Philo</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1971</th>
+      <td>Phineas</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>Presley</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1973</th>
+      <td>Ransom</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1974</th>
+      <td>Reece</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1975</th>
+      <td>Rene</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1976</th>
+      <td>Roswell</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>Rowland</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1978</th>
+      <td>Sampson</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1979</th>
+      <td>Samual</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1980</th>
+      <td>Santos</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1981</th>
+      <td>Schuyler</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>Sheppard</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1983</th>
+      <td>Spurgeon</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1984</th>
+      <td>Starling</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1985</th>
+      <td>Sylvanus</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1986</th>
+      <td>Theadore</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>Theophile</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1988</th>
+      <td>Tilmon</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1989</th>
+      <td>Tommy</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1990</th>
+      <td>Unknown</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1991</th>
+      <td>Vann</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>Wes</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1993</th>
+      <td>Winston</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1994</th>
+      <td>Wood</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1995</th>
+      <td>Woodie</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1996</th>
+      <td>Worthy</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>Wright</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1998</th>
+      <td>York</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>Zachariah</td>
+      <td>M</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+<p>2000 rows × 3 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="number-of-births">
+<h2>number of births<a class="headerlink" href="#number-of-births" title="Permalink to this headline">¶</a></h2>
+<p>Now we want to start doing some analysis.  <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> creates a new type of container that groups items.  Here, we’ll group by sex.</p>
+<p>See this:
+<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/groupby.html">http://pandas.pydata.org/pandas-docs/stable/groupby.html</a>
+<a class="reference external" href="https://community.modeanalytics.com/python/tutorial/pandas-groupby-and-python-lambda-functions/">https://community.modeanalytics.com/python/tutorial/pandas-groupby-and-python-lambda-functions/</a></p>
+<p>for a nice explanation of this method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names_1880</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;sex&quot;</span><span class="p">)[</span><span class="s2">&quot;births&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sex
+F     90992
+M    110490
+Name: births, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that we can use a column name as a parameter of the object, so we can equivalently do this as:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names_1880</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;sex&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">births</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sex
+F     90992
+M    110490
+Name: births, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>On its own, you can’t print a <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> object.  You need to do a transformation or filter on it to get back a <code class="docutils literal notranslate"><span class="pre">Series</span></code> or <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gb</span> <span class="o">=</span> <span class="n">names_1880</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;sex&quot;</span><span class="p">)</span>
+<span class="n">gb</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>births</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>F</th>
+      <td>942</td>
+      <td>942</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <td>1058</td>
+      <td>1058</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>As we saw in the intro, we can propagate a scalar to all indices in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.  We’ll use this to add a new column that represents the year:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names_1880</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1880</span>
+<span class="n">names_1880</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>births</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Mary</td>
+      <td>F</td>
+      <td>7065</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Anna</td>
+      <td>F</td>
+      <td>2604</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Emma</td>
+      <td>F</td>
+      <td>2003</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Elizabeth</td>
+      <td>F</td>
+      <td>1939</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Minnie</td>
+      <td>F</td>
+      <td>1746</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Margaret</td>
+      <td>F</td>
+      <td>1578</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Ida</td>
+      <td>F</td>
+      <td>1472</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Alice</td>
+      <td>F</td>
+      <td>1414</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Bertha</td>
+      <td>F</td>
+      <td>1320</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Sarah</td>
+      <td>F</td>
+      <td>1288</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Annie</td>
+      <td>F</td>
+      <td>1258</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Clara</td>
+      <td>F</td>
+      <td>1226</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Ella</td>
+      <td>F</td>
+      <td>1156</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Florence</td>
+      <td>F</td>
+      <td>1063</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Cora</td>
+      <td>F</td>
+      <td>1045</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Martha</td>
+      <td>F</td>
+      <td>1040</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Laura</td>
+      <td>F</td>
+      <td>1012</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Nellie</td>
+      <td>F</td>
+      <td>995</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Grace</td>
+      <td>F</td>
+      <td>982</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Carrie</td>
+      <td>F</td>
+      <td>949</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Maude</td>
+      <td>F</td>
+      <td>858</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Mabel</td>
+      <td>F</td>
+      <td>808</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Bessie</td>
+      <td>F</td>
+      <td>796</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Jennie</td>
+      <td>F</td>
+      <td>793</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Gertrude</td>
+      <td>F</td>
+      <td>787</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Julia</td>
+      <td>F</td>
+      <td>783</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Hattie</td>
+      <td>F</td>
+      <td>769</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Edith</td>
+      <td>F</td>
+      <td>768</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Mattie</td>
+      <td>F</td>
+      <td>704</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Rose</td>
+      <td>F</td>
+      <td>700</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1970</th>
+      <td>Philo</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1971</th>
+      <td>Phineas</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>Presley</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1973</th>
+      <td>Ransom</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1974</th>
+      <td>Reece</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1975</th>
+      <td>Rene</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1976</th>
+      <td>Roswell</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>Rowland</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1978</th>
+      <td>Sampson</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1979</th>
+      <td>Samual</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1980</th>
+      <td>Santos</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1981</th>
+      <td>Schuyler</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>Sheppard</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1983</th>
+      <td>Spurgeon</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1984</th>
+      <td>Starling</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1985</th>
+      <td>Sylvanus</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1986</th>
+      <td>Theadore</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>Theophile</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1988</th>
+      <td>Tilmon</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1989</th>
+      <td>Tommy</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1990</th>
+      <td>Unknown</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1991</th>
+      <td>Vann</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>Wes</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1993</th>
+      <td>Winston</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1994</th>
+      <td>Wood</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1995</th>
+      <td>Woodie</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1996</th>
+      <td>Worthy</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>Wright</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1998</th>
+      <td>York</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>Zachariah</td>
+      <td>M</td>
+      <td>5</td>
+      <td>1880</td>
+    </tr>
+  </tbody>
+</table>
+<p>2000 rows × 4 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="all-data-sets">
+<h2>all data sets<a class="headerlink" href="#all-data-sets" title="Permalink to this headline">¶</a></h2>
+<p>Now we can read in all of the datasets.  We will read them in one-by-one and add the “year” column to them.  We’ll keep a list of all the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s and then we’ll use a pandas method to transform this list of <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s into a single <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1880</span><span class="p">,</span> <span class="mi">2016</span><span class="p">)</span>
+
+<span class="n">pieces</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">,</span> <span class="s2">&quot;births&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">yr</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;babynames/yob</span><span class="si">{}</span><span class="s2">.txt&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">yr</span><span class="p">),</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+    
+    <span class="c1"># this creates a new column and gives all rows the same value -- the year</span>
+    <span class="n">frame</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">yr</span>
+    <span class="n">pieces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+
+<span class="c1"># create a single dataframe through concatenation -- ignore_index means that</span>
+<span class="c1"># we don&#39;t care about the original line numbers</span>
+<span class="n">names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">pieces</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>births</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Mary</td>
+      <td>F</td>
+      <td>7065</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Anna</td>
+      <td>F</td>
+      <td>2604</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Emma</td>
+      <td>F</td>
+      <td>2003</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Elizabeth</td>
+      <td>F</td>
+      <td>1939</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Minnie</td>
+      <td>F</td>
+      <td>1746</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Margaret</td>
+      <td>F</td>
+      <td>1578</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Ida</td>
+      <td>F</td>
+      <td>1472</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Alice</td>
+      <td>F</td>
+      <td>1414</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Bertha</td>
+      <td>F</td>
+      <td>1320</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Sarah</td>
+      <td>F</td>
+      <td>1288</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Annie</td>
+      <td>F</td>
+      <td>1258</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Clara</td>
+      <td>F</td>
+      <td>1226</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Ella</td>
+      <td>F</td>
+      <td>1156</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Florence</td>
+      <td>F</td>
+      <td>1063</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Cora</td>
+      <td>F</td>
+      <td>1045</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Martha</td>
+      <td>F</td>
+      <td>1040</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Laura</td>
+      <td>F</td>
+      <td>1012</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Nellie</td>
+      <td>F</td>
+      <td>995</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Grace</td>
+      <td>F</td>
+      <td>982</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Carrie</td>
+      <td>F</td>
+      <td>949</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Maude</td>
+      <td>F</td>
+      <td>858</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Mabel</td>
+      <td>F</td>
+      <td>808</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Bessie</td>
+      <td>F</td>
+      <td>796</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Jennie</td>
+      <td>F</td>
+      <td>793</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Gertrude</td>
+      <td>F</td>
+      <td>787</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Julia</td>
+      <td>F</td>
+      <td>783</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Hattie</td>
+      <td>F</td>
+      <td>769</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Edith</td>
+      <td>F</td>
+      <td>768</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Mattie</td>
+      <td>F</td>
+      <td>704</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Rose</td>
+      <td>F</td>
+      <td>700</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1858659</th>
+      <td>Zavon</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858660</th>
+      <td>Zay</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858661</th>
+      <td>Zaylor</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858662</th>
+      <td>Zayquan</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858663</th>
+      <td>Zecharia</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858664</th>
+      <td>Zecharya</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858665</th>
+      <td>Zee</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858666</th>
+      <td>Zeev</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858667</th>
+      <td>Zeik</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858668</th>
+      <td>Zekariah</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858669</th>
+      <td>Zepplin</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858670</th>
+      <td>Zerek</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858671</th>
+      <td>Zeyd</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858672</th>
+      <td>Zhi</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858673</th>
+      <td>Ziel</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858674</th>
+      <td>Zihan</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858675</th>
+      <td>Zihao</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858676</th>
+      <td>Ziheng</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858677</th>
+      <td>Zimere</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858678</th>
+      <td>Ziyi</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858679</th>
+      <td>Ziyu</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858680</th>
+      <td>Zoel</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858681</th>
+      <td>Zohar</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858682</th>
+      <td>Zolton</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858683</th>
+      <td>Zyah</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858684</th>
+      <td>Zykell</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858685</th>
+      <td>Zyking</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858686</th>
+      <td>Zykir</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858687</th>
+      <td>Zyrus</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1858688</th>
+      <td>Zyus</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+    </tr>
+  </tbody>
+</table>
+<p>1858689 rows × 4 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="pivot-tables">
+<h2>pivot tables<a class="headerlink" href="#pivot-tables" title="Permalink to this headline">¶</a></h2>
+<p>a <em>pivot table</em> creates a new dataframe from our orignal one, usually summarizing the data in a new way.  In particular, with a pivot table, we can create a new index and columns, with the data in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> reduced via some operation across another column.</p>
+<p>Here, the column that we are going to aggregrate is “births”, and the function will will use for the aggregating is <code class="docutils literal notranslate"><span class="pre">sum</span></code> (to sum over the names).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>births</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Mary</td>
+      <td>F</td>
+      <td>7065</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Anna</td>
+      <td>F</td>
+      <td>2604</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Emma</td>
+      <td>F</td>
+      <td>2003</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Elizabeth</td>
+      <td>F</td>
+      <td>1939</td>
+      <td>1880</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Minnie</td>
+      <td>F</td>
+      <td>1746</td>
+      <td>1880</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_births</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s2">&quot;births&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_births</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sex</th>
+      <th>F</th>
+      <th>M</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1880</th>
+      <td>90992</td>
+      <td>110490</td>
+    </tr>
+    <tr>
+      <th>1881</th>
+      <td>91953</td>
+      <td>100743</td>
+    </tr>
+    <tr>
+      <th>1882</th>
+      <td>107848</td>
+      <td>113686</td>
+    </tr>
+    <tr>
+      <th>1883</th>
+      <td>112318</td>
+      <td>104627</td>
+    </tr>
+    <tr>
+      <th>1884</th>
+      <td>129020</td>
+      <td>114443</td>
+    </tr>
+    <tr>
+      <th>1885</th>
+      <td>133055</td>
+      <td>107799</td>
+    </tr>
+    <tr>
+      <th>1886</th>
+      <td>144534</td>
+      <td>110785</td>
+    </tr>
+    <tr>
+      <th>1887</th>
+      <td>145981</td>
+      <td>101415</td>
+    </tr>
+    <tr>
+      <th>1888</th>
+      <td>178624</td>
+      <td>120850</td>
+    </tr>
+    <tr>
+      <th>1889</th>
+      <td>178366</td>
+      <td>110582</td>
+    </tr>
+    <tr>
+      <th>1890</th>
+      <td>190376</td>
+      <td>111025</td>
+    </tr>
+    <tr>
+      <th>1891</th>
+      <td>185482</td>
+      <td>101193</td>
+    </tr>
+    <tr>
+      <th>1892</th>
+      <td>212341</td>
+      <td>122036</td>
+    </tr>
+    <tr>
+      <th>1893</th>
+      <td>212905</td>
+      <td>112317</td>
+    </tr>
+    <tr>
+      <th>1894</th>
+      <td>222922</td>
+      <td>115770</td>
+    </tr>
+    <tr>
+      <th>1895</th>
+      <td>233628</td>
+      <td>117396</td>
+    </tr>
+    <tr>
+      <th>1896</th>
+      <td>237918</td>
+      <td>119568</td>
+    </tr>
+    <tr>
+      <th>1897</th>
+      <td>234200</td>
+      <td>112758</td>
+    </tr>
+    <tr>
+      <th>1898</th>
+      <td>258770</td>
+      <td>122691</td>
+    </tr>
+    <tr>
+      <th>1899</th>
+      <td>233023</td>
+      <td>106212</td>
+    </tr>
+    <tr>
+      <th>1900</th>
+      <td>299822</td>
+      <td>150490</td>
+    </tr>
+    <tr>
+      <th>1901</th>
+      <td>239347</td>
+      <td>106469</td>
+    </tr>
+    <tr>
+      <th>1902</th>
+      <td>264075</td>
+      <td>122659</td>
+    </tr>
+    <tr>
+      <th>1903</th>
+      <td>261972</td>
+      <td>119233</td>
+    </tr>
+    <tr>
+      <th>1904</th>
+      <td>275371</td>
+      <td>128125</td>
+    </tr>
+    <tr>
+      <th>1905</th>
+      <td>291623</td>
+      <td>132318</td>
+    </tr>
+    <tr>
+      <th>1906</th>
+      <td>295304</td>
+      <td>133157</td>
+    </tr>
+    <tr>
+      <th>1907</th>
+      <td>318565</td>
+      <td>146830</td>
+    </tr>
+    <tr>
+      <th>1908</th>
+      <td>334315</td>
+      <td>154343</td>
+    </tr>
+    <tr>
+      <th>1909</th>
+      <td>347232</td>
+      <td>163999</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1986</th>
+      <td>1714784</td>
+      <td>1840347</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>1737981</td>
+      <td>1865804</td>
+    </tr>
+    <tr>
+      <th>1988</th>
+      <td>1779975</td>
+      <td>1912764</td>
+    </tr>
+    <tr>
+      <th>1989</th>
+      <td>1843175</td>
+      <td>2000082</td>
+    </tr>
+    <tr>
+      <th>1990</th>
+      <td>1897807</td>
+      <td>2052662</td>
+    </tr>
+    <tr>
+      <th>1991</th>
+      <td>1874489</td>
+      <td>2019523</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>1843383</td>
+      <td>1996492</td>
+    </tr>
+    <tr>
+      <th>1993</th>
+      <td>1808508</td>
+      <td>1960486</td>
+    </tr>
+    <tr>
+      <th>1994</th>
+      <td>1785184</td>
+      <td>1931313</td>
+    </tr>
+    <tr>
+      <th>1995</th>
+      <td>1758010</td>
+      <td>1902971</td>
+    </tr>
+    <tr>
+      <th>1996</th>
+      <td>1752364</td>
+      <td>1893548</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>1739963</td>
+      <td>1884324</td>
+    </tr>
+    <tr>
+      <th>1998</th>
+      <td>1766075</td>
+      <td>1910424</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>1772788</td>
+      <td>1918984</td>
+    </tr>
+    <tr>
+      <th>2000</th>
+      <td>1814738</td>
+      <td>1962556</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>1799199</td>
+      <td>1941401</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>1795367</td>
+      <td>1939950</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>1825509</td>
+      <td>1973612</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>1834379</td>
+      <td>1983010</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>1845640</td>
+      <td>1995115</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>1898776</td>
+      <td>2052652</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>1919775</td>
+      <td>2072505</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>1887660</td>
+      <td>2036750</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>1833461</td>
+      <td>1979895</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>1773440</td>
+      <td>1914629</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>1754424</td>
+      <td>1894262</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>1755254</td>
+      <td>1890889</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>1747544</td>
+      <td>1883945</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>1777242</td>
+      <td>1910876</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>1769325</td>
+      <td>1898858</td>
+    </tr>
+  </tbody>
+</table>
+<p>136 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_births</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f781807bd30&gt;
+</pre></div>
+</div>
+<img alt="../_images/pandas-babynames_21_1.png" src="../_images/pandas-babynames_21_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="apply-and-new-columns">
+<h2><code class="docutils literal notranslate"><span class="pre">.apply()</span></code> and new columns<a class="headerlink" href="#apply-and-new-columns" title="Permalink to this headline">¶</a></h2>
+<p>Now we’ll use <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> again to allow use to derive a new column – the fraction of the births with the name specified by the index.</p>
+<p><code class="docutils literal notranslate"><span class="pre">apply()</span></code> uses what Pandas calls the <em>split-apply-combine</em> rules, e.g., it splits the data into groups, applies your function, and then intelligently concatenates it back together.  Here, the result will be a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with the original information and this new column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_prop</span><span class="p">(</span><span class="n">group</span><span class="p">):</span>
+    <span class="n">group</span><span class="p">[</span><span class="s2">&quot;prop&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="s2">&quot;births&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">group</span><span class="p">[</span><span class="s2">&quot;births&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">group</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">add_prop</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>births</th>
+      <th>year</th>
+      <th>prop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Mary</td>
+      <td>F</td>
+      <td>7065</td>
+      <td>1880</td>
+      <td>0.077644</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Anna</td>
+      <td>F</td>
+      <td>2604</td>
+      <td>1880</td>
+      <td>0.028618</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Emma</td>
+      <td>F</td>
+      <td>2003</td>
+      <td>1880</td>
+      <td>0.022013</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Elizabeth</td>
+      <td>F</td>
+      <td>1939</td>
+      <td>1880</td>
+      <td>0.021310</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Minnie</td>
+      <td>F</td>
+      <td>1746</td>
+      <td>1880</td>
+      <td>0.019189</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Margaret</td>
+      <td>F</td>
+      <td>1578</td>
+      <td>1880</td>
+      <td>0.017342</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Ida</td>
+      <td>F</td>
+      <td>1472</td>
+      <td>1880</td>
+      <td>0.016177</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Alice</td>
+      <td>F</td>
+      <td>1414</td>
+      <td>1880</td>
+      <td>0.015540</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Bertha</td>
+      <td>F</td>
+      <td>1320</td>
+      <td>1880</td>
+      <td>0.014507</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Sarah</td>
+      <td>F</td>
+      <td>1288</td>
+      <td>1880</td>
+      <td>0.014155</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Annie</td>
+      <td>F</td>
+      <td>1258</td>
+      <td>1880</td>
+      <td>0.013825</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Clara</td>
+      <td>F</td>
+      <td>1226</td>
+      <td>1880</td>
+      <td>0.013474</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Ella</td>
+      <td>F</td>
+      <td>1156</td>
+      <td>1880</td>
+      <td>0.012704</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Florence</td>
+      <td>F</td>
+      <td>1063</td>
+      <td>1880</td>
+      <td>0.011682</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Cora</td>
+      <td>F</td>
+      <td>1045</td>
+      <td>1880</td>
+      <td>0.011485</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Martha</td>
+      <td>F</td>
+      <td>1040</td>
+      <td>1880</td>
+      <td>0.011430</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Laura</td>
+      <td>F</td>
+      <td>1012</td>
+      <td>1880</td>
+      <td>0.011122</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Nellie</td>
+      <td>F</td>
+      <td>995</td>
+      <td>1880</td>
+      <td>0.010935</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Grace</td>
+      <td>F</td>
+      <td>982</td>
+      <td>1880</td>
+      <td>0.010792</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Carrie</td>
+      <td>F</td>
+      <td>949</td>
+      <td>1880</td>
+      <td>0.010429</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Maude</td>
+      <td>F</td>
+      <td>858</td>
+      <td>1880</td>
+      <td>0.009429</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Mabel</td>
+      <td>F</td>
+      <td>808</td>
+      <td>1880</td>
+      <td>0.008880</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Bessie</td>
+      <td>F</td>
+      <td>796</td>
+      <td>1880</td>
+      <td>0.008748</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Jennie</td>
+      <td>F</td>
+      <td>793</td>
+      <td>1880</td>
+      <td>0.008715</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Gertrude</td>
+      <td>F</td>
+      <td>787</td>
+      <td>1880</td>
+      <td>0.008649</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Julia</td>
+      <td>F</td>
+      <td>783</td>
+      <td>1880</td>
+      <td>0.008605</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Hattie</td>
+      <td>F</td>
+      <td>769</td>
+      <td>1880</td>
+      <td>0.008451</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Edith</td>
+      <td>F</td>
+      <td>768</td>
+      <td>1880</td>
+      <td>0.008440</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Mattie</td>
+      <td>F</td>
+      <td>704</td>
+      <td>1880</td>
+      <td>0.007737</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Rose</td>
+      <td>F</td>
+      <td>700</td>
+      <td>1880</td>
+      <td>0.007693</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1858659</th>
+      <td>Zavon</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858660</th>
+      <td>Zay</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858661</th>
+      <td>Zaylor</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858662</th>
+      <td>Zayquan</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858663</th>
+      <td>Zecharia</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858664</th>
+      <td>Zecharya</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858665</th>
+      <td>Zee</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858666</th>
+      <td>Zeev</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858667</th>
+      <td>Zeik</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858668</th>
+      <td>Zekariah</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858669</th>
+      <td>Zepplin</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858670</th>
+      <td>Zerek</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858671</th>
+      <td>Zeyd</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858672</th>
+      <td>Zhi</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858673</th>
+      <td>Ziel</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858674</th>
+      <td>Zihan</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858675</th>
+      <td>Zihao</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858676</th>
+      <td>Ziheng</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858677</th>
+      <td>Zimere</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858678</th>
+      <td>Ziyi</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858679</th>
+      <td>Ziyu</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858680</th>
+      <td>Zoel</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858681</th>
+      <td>Zohar</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858682</th>
+      <td>Zolton</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858683</th>
+      <td>Zyah</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858684</th>
+      <td>Zykell</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858685</th>
+      <td>Zyking</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858686</th>
+      <td>Zykir</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858687</th>
+      <td>Zyrus</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+    <tr>
+      <th>1858688</th>
+      <td>Zyus</td>
+      <td>M</td>
+      <td>5</td>
+      <td>2015</td>
+      <td>0.000003</td>
+    </tr>
+  </tbody>
+</table>
+<p>1858689 rows × 5 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="q1-sanity-check">
+<h2>Q1: Sanity check<a class="headerlink" href="#q1-sanity-check" title="Permalink to this headline">¶</a></h2>
+<p>Verify that within each of the groups we just used above that the “prop” column sums to 1 (it should be close, to roundoff).  The <code class="docutils literal notranslate"><span class="pre">np.allclose()</span></code> function might be useful here.</p>
+<p>Now we will group by “year” and “sex” and then sort by births to get just the top N most popular names.</p>
+<p>Notice that we simply append any additional arguments to our apply function after the function name (this is an example of the <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> behavior in python</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_top</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">group</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;births&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="n">N</span><span class="p">]</span>
+
+<span class="n">grouped</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">])</span>
+<span class="n">top</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_top</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>births</th>
+      <th>year</th>
+      <th>prop</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th>sex</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="30" valign="top">1880</th>
+      <th rowspan="30" valign="top">F</th>
+      <th>0</th>
+      <td>Mary</td>
+      <td>F</td>
+      <td>7065</td>
+      <td>1880</td>
+      <td>0.077644</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Anna</td>
+      <td>F</td>
+      <td>2604</td>
+      <td>1880</td>
+      <td>0.028618</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Emma</td>
+      <td>F</td>
+      <td>2003</td>
+      <td>1880</td>
+      <td>0.022013</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Elizabeth</td>
+      <td>F</td>
+      <td>1939</td>
+      <td>1880</td>
+      <td>0.021310</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Minnie</td>
+      <td>F</td>
+      <td>1746</td>
+      <td>1880</td>
+      <td>0.019189</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Margaret</td>
+      <td>F</td>
+      <td>1578</td>
+      <td>1880</td>
+      <td>0.017342</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Ida</td>
+      <td>F</td>
+      <td>1472</td>
+      <td>1880</td>
+      <td>0.016177</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Alice</td>
+      <td>F</td>
+      <td>1414</td>
+      <td>1880</td>
+      <td>0.015540</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Bertha</td>
+      <td>F</td>
+      <td>1320</td>
+      <td>1880</td>
+      <td>0.014507</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Sarah</td>
+      <td>F</td>
+      <td>1288</td>
+      <td>1880</td>
+      <td>0.014155</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Annie</td>
+      <td>F</td>
+      <td>1258</td>
+      <td>1880</td>
+      <td>0.013825</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Clara</td>
+      <td>F</td>
+      <td>1226</td>
+      <td>1880</td>
+      <td>0.013474</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Ella</td>
+      <td>F</td>
+      <td>1156</td>
+      <td>1880</td>
+      <td>0.012704</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Florence</td>
+      <td>F</td>
+      <td>1063</td>
+      <td>1880</td>
+      <td>0.011682</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Cora</td>
+      <td>F</td>
+      <td>1045</td>
+      <td>1880</td>
+      <td>0.011485</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Martha</td>
+      <td>F</td>
+      <td>1040</td>
+      <td>1880</td>
+      <td>0.011430</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Laura</td>
+      <td>F</td>
+      <td>1012</td>
+      <td>1880</td>
+      <td>0.011122</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Nellie</td>
+      <td>F</td>
+      <td>995</td>
+      <td>1880</td>
+      <td>0.010935</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Grace</td>
+      <td>F</td>
+      <td>982</td>
+      <td>1880</td>
+      <td>0.010792</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Carrie</td>
+      <td>F</td>
+      <td>949</td>
+      <td>1880</td>
+      <td>0.010429</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Maude</td>
+      <td>F</td>
+      <td>858</td>
+      <td>1880</td>
+      <td>0.009429</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Mabel</td>
+      <td>F</td>
+      <td>808</td>
+      <td>1880</td>
+      <td>0.008880</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Bessie</td>
+      <td>F</td>
+      <td>796</td>
+      <td>1880</td>
+      <td>0.008748</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Jennie</td>
+      <td>F</td>
+      <td>793</td>
+      <td>1880</td>
+      <td>0.008715</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Gertrude</td>
+      <td>F</td>
+      <td>787</td>
+      <td>1880</td>
+      <td>0.008649</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Julia</td>
+      <td>F</td>
+      <td>783</td>
+      <td>1880</td>
+      <td>0.008605</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Hattie</td>
+      <td>F</td>
+      <td>769</td>
+      <td>1880</td>
+      <td>0.008451</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Edith</td>
+      <td>F</td>
+      <td>768</td>
+      <td>1880</td>
+      <td>0.008440</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Mattie</td>
+      <td>F</td>
+      <td>704</td>
+      <td>1880</td>
+      <td>0.007737</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Rose</td>
+      <td>F</td>
+      <td>700</td>
+      <td>1880</td>
+      <td>0.007693</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="30" valign="top">2015</th>
+      <th rowspan="30" valign="top">M</th>
+      <th>1845703</th>
+      <td>Yadiel</td>
+      <td>M</td>
+      <td>211</td>
+      <td>2015</td>
+      <td>0.000111</td>
+    </tr>
+    <tr>
+      <th>1845704</th>
+      <td>Yahya</td>
+      <td>M</td>
+      <td>211</td>
+      <td>2015</td>
+      <td>0.000111</td>
+    </tr>
+    <tr>
+      <th>1845700</th>
+      <td>Aarush</td>
+      <td>M</td>
+      <td>211</td>
+      <td>2015</td>
+      <td>0.000111</td>
+    </tr>
+    <tr>
+      <th>1845702</th>
+      <td>Robin</td>
+      <td>M</td>
+      <td>211</td>
+      <td>2015</td>
+      <td>0.000111</td>
+    </tr>
+    <tr>
+      <th>1845701</th>
+      <td>Deangelo</td>
+      <td>M</td>
+      <td>211</td>
+      <td>2015</td>
+      <td>0.000111</td>
+    </tr>
+    <tr>
+      <th>1845705</th>
+      <td>Boden</td>
+      <td>M</td>
+      <td>209</td>
+      <td>2015</td>
+      <td>0.000110</td>
+    </tr>
+    <tr>
+      <th>1845707</th>
+      <td>Kye</td>
+      <td>M</td>
+      <td>209</td>
+      <td>2015</td>
+      <td>0.000110</td>
+    </tr>
+    <tr>
+      <th>1845708</th>
+      <td>Kylen</td>
+      <td>M</td>
+      <td>209</td>
+      <td>2015</td>
+      <td>0.000110</td>
+    </tr>
+    <tr>
+      <th>1845709</th>
+      <td>Todd</td>
+      <td>M</td>
+      <td>209</td>
+      <td>2015</td>
+      <td>0.000110</td>
+    </tr>
+    <tr>
+      <th>1845710</th>
+      <td>Truman</td>
+      <td>M</td>
+      <td>209</td>
+      <td>2015</td>
+      <td>0.000110</td>
+    </tr>
+    <tr>
+      <th>1845706</th>
+      <td>Ean</td>
+      <td>M</td>
+      <td>209</td>
+      <td>2015</td>
+      <td>0.000110</td>
+    </tr>
+    <tr>
+      <th>1845712</th>
+      <td>Gilbert</td>
+      <td>M</td>
+      <td>208</td>
+      <td>2015</td>
+      <td>0.000110</td>
+    </tr>
+    <tr>
+      <th>1845713</th>
+      <td>Haiden</td>
+      <td>M</td>
+      <td>208</td>
+      <td>2015</td>
+      <td>0.000110</td>
+    </tr>
+    <tr>
+      <th>1845711</th>
+      <td>Chevy</td>
+      <td>M</td>
+      <td>208</td>
+      <td>2015</td>
+      <td>0.000110</td>
+    </tr>
+    <tr>
+      <th>1845715</th>
+      <td>Dangelo</td>
+      <td>M</td>
+      <td>207</td>
+      <td>2015</td>
+      <td>0.000109</td>
+    </tr>
+    <tr>
+      <th>1845716</th>
+      <td>Juelz</td>
+      <td>M</td>
+      <td>207</td>
+      <td>2015</td>
+      <td>0.000109</td>
+    </tr>
+    <tr>
+      <th>1845717</th>
+      <td>Osvaldo</td>
+      <td>M</td>
+      <td>207</td>
+      <td>2015</td>
+      <td>0.000109</td>
+    </tr>
+    <tr>
+      <th>1845714</th>
+      <td>Brixton</td>
+      <td>M</td>
+      <td>207</td>
+      <td>2015</td>
+      <td>0.000109</td>
+    </tr>
+    <tr>
+      <th>1845718</th>
+      <td>Bishop</td>
+      <td>M</td>
+      <td>206</td>
+      <td>2015</td>
+      <td>0.000108</td>
+    </tr>
+    <tr>
+      <th>1845719</th>
+      <td>Freddy</td>
+      <td>M</td>
+      <td>206</td>
+      <td>2015</td>
+      <td>0.000108</td>
+    </tr>
+    <tr>
+      <th>1845720</th>
+      <td>Reagan</td>
+      <td>M</td>
+      <td>206</td>
+      <td>2015</td>
+      <td>0.000108</td>
+    </tr>
+    <tr>
+      <th>1845721</th>
+      <td>Frankie</td>
+      <td>M</td>
+      <td>205</td>
+      <td>2015</td>
+      <td>0.000108</td>
+    </tr>
+    <tr>
+      <th>1845722</th>
+      <td>Malaki</td>
+      <td>M</td>
+      <td>205</td>
+      <td>2015</td>
+      <td>0.000108</td>
+    </tr>
+    <tr>
+      <th>1845725</th>
+      <td>Jayvion</td>
+      <td>M</td>
+      <td>204</td>
+      <td>2015</td>
+      <td>0.000107</td>
+    </tr>
+    <tr>
+      <th>1845726</th>
+      <td>Leroy</td>
+      <td>M</td>
+      <td>204</td>
+      <td>2015</td>
+      <td>0.000107</td>
+    </tr>
+    <tr>
+      <th>1845724</th>
+      <td>Deshawn</td>
+      <td>M</td>
+      <td>204</td>
+      <td>2015</td>
+      <td>0.000107</td>
+    </tr>
+    <tr>
+      <th>1845723</th>
+      <td>Camren</td>
+      <td>M</td>
+      <td>204</td>
+      <td>2015</td>
+      <td>0.000107</td>
+    </tr>
+    <tr>
+      <th>1845728</th>
+      <td>Jaydon</td>
+      <td>M</td>
+      <td>203</td>
+      <td>2015</td>
+      <td>0.000107</td>
+    </tr>
+    <tr>
+      <th>1845727</th>
+      <td>Briar</td>
+      <td>M</td>
+      <td>203</td>
+      <td>2015</td>
+      <td>0.000107</td>
+    </tr>
+    <tr>
+      <th>1845730</th>
+      <td>Ayan</td>
+      <td>M</td>
+      <td>202</td>
+      <td>2015</td>
+      <td>0.000106</td>
+    </tr>
+  </tbody>
+</table>
+<p>271877 rows × 5 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="q2-split-by-sex">
+<h2>Q2: split by sex<a class="headerlink" href="#q2-split-by-sex" title="Permalink to this headline">¶</a></h2>
+<p>create two new dataframes, one <code class="docutils literal notranslate"><span class="pre">boys</span></code> with just those in <code class="docutils literal notranslate"><span class="pre">top</span></code> that are “M” and one <code class="docutils literal notranslate"><span class="pre">girls</span></code> with those in <code class="docutils literal notranslate"><span class="pre">top</span></code> who are “F”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boys</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-17-82107729bbc1&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">boys</span>
+
+<span class="ne">NameError</span>: name &#39;boys&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="more-analysis">
+<h2>More analysis<a class="headerlink" href="#more-analysis" title="Permalink to this headline">¶</a></h2>
+<p>How many times does each name appear, by year?  This dataframe is the total number of births by year and name</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_births</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s2">&quot;births&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/lib64/python3.6/site-packages/pandas/core/reshape/pivot.py:135: FutureWarning: &#39;year&#39; is both a column name and an index level.
+Defaulting to column but this will raise an ambiguity error in a future version
+  grouped = data.groupby(keys)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_births</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>Aaden</th>
+      <th>Aaliyah</th>
+      <th>Aanya</th>
+      <th>Aarav</th>
+      <th>Aaron</th>
+      <th>Aarush</th>
+      <th>Ab</th>
+      <th>Abagail</th>
+      <th>Abb</th>
+      <th>Abbey</th>
+      <th>...</th>
+      <th>Zoa</th>
+      <th>Zoe</th>
+      <th>Zoey</th>
+      <th>Zoie</th>
+      <th>Zola</th>
+      <th>Zollie</th>
+      <th>Zona</th>
+      <th>Zora</th>
+      <th>Zula</th>
+      <th>Zuri</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1880</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>102.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>8.0</td>
+      <td>23.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>8.0</td>
+      <td>28.0</td>
+      <td>27.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1881</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>94.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>22.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>10.0</td>
+      <td>NaN</td>
+      <td>9.0</td>
+      <td>21.0</td>
+      <td>27.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1882</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>85.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>8.0</td>
+      <td>25.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.0</td>
+      <td>NaN</td>
+      <td>17.0</td>
+      <td>32.0</td>
+      <td>21.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1883</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>105.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>23.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>10.0</td>
+      <td>NaN</td>
+      <td>11.0</td>
+      <td>35.0</td>
+      <td>25.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1884</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>97.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>13.0</td>
+      <td>31.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>58.0</td>
+      <td>27.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1885</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>88.0</td>
+      <td>NaN</td>
+      <td>6.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>6.0</td>
+      <td>27.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.0</td>
+      <td>6.0</td>
+      <td>14.0</td>
+      <td>48.0</td>
+      <td>38.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1886</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>86.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>13.0</td>
+      <td>25.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.0</td>
+      <td>NaN</td>
+      <td>20.0</td>
+      <td>52.0</td>
+      <td>43.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1887</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>78.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>9.0</td>
+      <td>34.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>23.0</td>
+      <td>NaN</td>
+      <td>28.0</td>
+      <td>46.0</td>
+      <td>33.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1888</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>90.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>11.0</td>
+      <td>42.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>23.0</td>
+      <td>7.0</td>
+      <td>30.0</td>
+      <td>42.0</td>
+      <td>45.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1889</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>85.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>14.0</td>
+      <td>29.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>22.0</td>
+      <td>NaN</td>
+      <td>29.0</td>
+      <td>53.0</td>
+      <td>55.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1890</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>96.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.0</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>42.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>32.0</td>
+      <td>7.0</td>
+      <td>27.0</td>
+      <td>60.0</td>
+      <td>65.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1891</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>69.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>34.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>29.0</td>
+      <td>6.0</td>
+      <td>14.0</td>
+      <td>52.0</td>
+      <td>45.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1892</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>95.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>34.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>27.0</td>
+      <td>NaN</td>
+      <td>25.0</td>
+      <td>66.0</td>
+      <td>53.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1893</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>81.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>23.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>34.0</td>
+      <td>6.0</td>
+      <td>15.0</td>
+      <td>67.0</td>
+      <td>70.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1894</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>79.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>28.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>51.0</td>
+      <td>NaN</td>
+      <td>23.0</td>
+      <td>66.0</td>
+      <td>64.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1895</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>94.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>34.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>60.0</td>
+      <td>11.0</td>
+      <td>38.0</td>
+      <td>55.0</td>
+      <td>55.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1896</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>69.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>36.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>47.0</td>
+      <td>NaN</td>
+      <td>38.0</td>
+      <td>72.0</td>
+      <td>65.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1897</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>87.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>35.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>51.0</td>
+      <td>NaN</td>
+      <td>28.0</td>
+      <td>67.0</td>
+      <td>79.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1898</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>89.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>30.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>62.0</td>
+      <td>NaN</td>
+      <td>28.0</td>
+      <td>65.0</td>
+      <td>83.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1899</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>71.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>27.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>49.0</td>
+      <td>6.0</td>
+      <td>31.0</td>
+      <td>56.0</td>
+      <td>60.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1900</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>103.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>26.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>48.0</td>
+      <td>9.0</td>
+      <td>44.0</td>
+      <td>99.0</td>
+      <td>71.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1901</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>80.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>26.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>56.0</td>
+      <td>NaN</td>
+      <td>31.0</td>
+      <td>58.0</td>
+      <td>57.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1902</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>78.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>34.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>58.0</td>
+      <td>NaN</td>
+      <td>23.0</td>
+      <td>58.0</td>
+      <td>66.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1903</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>93.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>19.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>64.0</td>
+      <td>NaN</td>
+      <td>41.0</td>
+      <td>83.0</td>
+      <td>74.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1904</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>117.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>27.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>46.0</td>
+      <td>NaN</td>
+      <td>35.0</td>
+      <td>54.0</td>
+      <td>74.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1905</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>96.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>24.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>66.0</td>
+      <td>8.0</td>
+      <td>24.0</td>
+      <td>55.0</td>
+      <td>61.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1906</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>96.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>19.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>59.0</td>
+      <td>NaN</td>
+      <td>37.0</td>
+      <td>64.0</td>
+      <td>58.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1907</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>130.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>19.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>53.0</td>
+      <td>11.0</td>
+      <td>39.0</td>
+      <td>92.0</td>
+      <td>72.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1908</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>114.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>23.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>70.0</td>
+      <td>NaN</td>
+      <td>31.0</td>
+      <td>59.0</td>
+      <td>53.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1909</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>142.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>22.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>59.0</td>
+      <td>NaN</td>
+      <td>39.0</td>
+      <td>57.0</td>
+      <td>76.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1986</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12690.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>370.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>213.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12678.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>327.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>247.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1988</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14397.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>404.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>241.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1989</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15314.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>470.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>376.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14550.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>507.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>478.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1991</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14240.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>451.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>722.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14506.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>430.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>981.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1993</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>13825.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>503.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>1193.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1994</th>
+      <td>NaN</td>
+      <td>1451.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14380.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>597.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>1333.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1995</th>
+      <td>NaN</td>
+      <td>1255.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>13286.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>549.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>1726.0</td>
+      <td>219.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1996</th>
+      <td>NaN</td>
+      <td>831.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>11969.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>552.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2064.0</td>
+      <td>339.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>NaN</td>
+      <td>1738.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>11166.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>645.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2362.0</td>
+      <td>407.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1998</th>
+      <td>NaN</td>
+      <td>1399.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>10544.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>661.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2692.0</td>
+      <td>478.0</td>
+      <td>225.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>NaN</td>
+      <td>1088.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9852.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>211.0</td>
+      <td>NaN</td>
+      <td>710.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>3237.0</td>
+      <td>563.0</td>
+      <td>257.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2000</th>
+      <td>NaN</td>
+      <td>1495.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9551.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>222.0</td>
+      <td>NaN</td>
+      <td>660.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>3785.0</td>
+      <td>691.0</td>
+      <td>320.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>NaN</td>
+      <td>3352.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9534.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>244.0</td>
+      <td>NaN</td>
+      <td>687.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>4644.0</td>
+      <td>822.0</td>
+      <td>439.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>NaN</td>
+      <td>4778.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8999.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>256.0</td>
+      <td>NaN</td>
+      <td>600.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>4884.0</td>
+      <td>1182.0</td>
+      <td>438.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>NaN</td>
+      <td>3671.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8859.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>276.0</td>
+      <td>NaN</td>
+      <td>625.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>5085.0</td>
+      <td>1469.0</td>
+      <td>449.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>NaN</td>
+      <td>3486.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8386.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>258.0</td>
+      <td>NaN</td>
+      <td>504.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>5362.0</td>
+      <td>1622.0</td>
+      <td>515.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>NaN</td>
+      <td>3456.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7799.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>287.0</td>
+      <td>NaN</td>
+      <td>452.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>4957.0</td>
+      <td>2270.0</td>
+      <td>502.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>NaN</td>
+      <td>3742.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8291.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>298.0</td>
+      <td>NaN</td>
+      <td>404.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>5152.0</td>
+      <td>2848.0</td>
+      <td>531.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>NaN</td>
+      <td>3952.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8933.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>313.0</td>
+      <td>NaN</td>
+      <td>349.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>4931.0</td>
+      <td>3031.0</td>
+      <td>527.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>956.0</td>
+      <td>4038.0</td>
+      <td>NaN</td>
+      <td>219.0</td>
+      <td>8536.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>320.0</td>
+      <td>NaN</td>
+      <td>344.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>4779.0</td>
+      <td>3445.0</td>
+      <td>493.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>1267.0</td>
+      <td>4366.0</td>
+      <td>NaN</td>
+      <td>270.0</td>
+      <td>7966.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>297.0</td>
+      <td>NaN</td>
+      <td>307.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>5144.0</td>
+      <td>3991.0</td>
+      <td>499.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>450.0</td>
+      <td>4659.0</td>
+      <td>NaN</td>
+      <td>438.0</td>
+      <td>7458.0</td>
+      <td>227.0</td>
+      <td>NaN</td>
+      <td>281.0</td>
+      <td>NaN</td>
+      <td>299.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>6263.0</td>
+      <td>5200.0</td>
+      <td>508.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>259.0</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>274.0</td>
+      <td>5105.0</td>
+      <td>NaN</td>
+      <td>436.0</td>
+      <td>7610.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>287.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>6294.0</td>
+      <td>6394.0</td>
+      <td>523.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>313.0</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>223.0</td>
+      <td>5499.0</td>
+      <td>NaN</td>
+      <td>435.0</td>
+      <td>7519.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>6445.0</td>
+      <td>7457.0</td>
+      <td>516.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>434.0</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>203.0</td>
+      <td>5217.0</td>
+      <td>NaN</td>
+      <td>495.0</td>
+      <td>7289.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>5967.0</td>
+      <td>7224.0</td>
+      <td>431.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>566.0</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>237.0</td>
+      <td>4871.0</td>
+      <td>266.0</td>
+      <td>531.0</td>
+      <td>7368.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>5857.0</td>
+      <td>7384.0</td>
+      <td>365.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>664.0</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>296.0</td>
+      <td>4836.0</td>
+      <td>NaN</td>
+      <td>539.0</td>
+      <td>7113.0</td>
+      <td>211.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>5995.0</td>
+      <td>6900.0</td>
+      <td>367.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>709.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>136 rows × 7062 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_births</span><span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year
+1880     9701.0
+1881     8795.0
+1882     9597.0
+1883     8934.0
+1884     9428.0
+1885     8801.0
+1886     9074.0
+1887     8166.0
+1888     9299.0
+1889     8600.0
+1890     8558.0
+1891     7724.0
+1892     9093.0
+1893     8110.0
+1894     8298.0
+1895     8381.0
+1896     8189.0
+1897     7596.0
+1898     8214.0
+1899     7030.0
+1900     9875.0
+1901     6938.0
+1902     7945.0
+1903     7649.0
+1904     8148.0
+1905     8103.0
+1906     8307.0
+1907     9048.0
+1908     9400.0
+1909     9658.0
+         ...   
+1986    30410.0
+1987    29732.0
+1988    29561.0
+1989    29838.0
+1990    29066.0
+1991    27798.0
+1992    26241.0
+1993    24989.0
+1994    24175.0
+1995    23232.0
+1996    22169.0
+1997    21372.0
+1998    20615.0
+1999    20341.0
+2000    20084.0
+2001    18879.0
+2002    17442.0
+2003    17222.0
+2004    16439.0
+2005    15760.0
+2006    15153.0
+2007    14424.0
+2008    13310.0
+2009    12103.0
+2010    11543.0
+2011    11027.0
+2012    10607.0
+2013    10687.0
+2014    10659.0
+2015    10303.0
+Name: John, Length: 136, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that this matches what we had in our previous data frame</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top</span><span class="p">[</span><span class="n">top</span><span class="o">.</span><span class="n">name</span><span class="o">==</span><span class="s2">&quot;John&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>births</th>
+      <th>year</th>
+      <th>prop</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th>sex</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">1880</th>
+      <th>F</th>
+      <th>228</th>
+      <td>John</td>
+      <td>F</td>
+      <td>46</td>
+      <td>1880</td>
+      <td>0.000506</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>942</th>
+      <td>John</td>
+      <td>M</td>
+      <td>9655</td>
+      <td>1880</td>
+      <td>0.087383</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1881</th>
+      <th>F</th>
+      <th>2312</th>
+      <td>John</td>
+      <td>F</td>
+      <td>26</td>
+      <td>1881</td>
+      <td>0.000283</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>2938</th>
+      <td>John</td>
+      <td>M</td>
+      <td>8769</td>
+      <td>1881</td>
+      <td>0.087043</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1882</th>
+      <th>F</th>
+      <th>4212</th>
+      <td>John</td>
+      <td>F</td>
+      <td>40</td>
+      <td>1882</td>
+      <td>0.000371</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>4963</th>
+      <td>John</td>
+      <td>M</td>
+      <td>9557</td>
+      <td>1882</td>
+      <td>0.084065</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1883</th>
+      <th>F</th>
+      <th>6340</th>
+      <td>John</td>
+      <td>F</td>
+      <td>40</td>
+      <td>1883</td>
+      <td>0.000356</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>7116</th>
+      <td>John</td>
+      <td>M</td>
+      <td>8894</td>
+      <td>1883</td>
+      <td>0.085007</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1884</th>
+      <th>F</th>
+      <th>8454</th>
+      <td>John</td>
+      <td>F</td>
+      <td>40</td>
+      <td>1884</td>
+      <td>0.000310</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>9318</th>
+      <td>John</td>
+      <td>M</td>
+      <td>9388</td>
+      <td>1884</td>
+      <td>0.082032</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1885</th>
+      <th>F</th>
+      <th>10739</th>
+      <td>John</td>
+      <td>F</td>
+      <td>45</td>
+      <td>1885</td>
+      <td>0.000338</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>11640</th>
+      <td>John</td>
+      <td>M</td>
+      <td>8756</td>
+      <td>1885</td>
+      <td>0.081225</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1886</th>
+      <th>F</th>
+      <th>13036</th>
+      <td>John</td>
+      <td>F</td>
+      <td>48</td>
+      <td>1886</td>
+      <td>0.000332</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>14019</th>
+      <td>John</td>
+      <td>M</td>
+      <td>9026</td>
+      <td>1886</td>
+      <td>0.081473</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1887</th>
+      <th>F</th>
+      <th>15414</th>
+      <td>John</td>
+      <td>F</td>
+      <td>56</td>
+      <td>1887</td>
+      <td>0.000384</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>16435</th>
+      <td>John</td>
+      <td>M</td>
+      <td>8110</td>
+      <td>1887</td>
+      <td>0.079968</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1888</th>
+      <th>F</th>
+      <th>17834</th>
+      <td>John</td>
+      <td>F</td>
+      <td>52</td>
+      <td>1888</td>
+      <td>0.000291</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>18976</th>
+      <td>John</td>
+      <td>M</td>
+      <td>9247</td>
+      <td>1888</td>
+      <td>0.076516</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1889</th>
+      <th>F</th>
+      <th>20498</th>
+      <td>John</td>
+      <td>F</td>
+      <td>52</td>
+      <td>1889</td>
+      <td>0.000292</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>21632</th>
+      <td>John</td>
+      <td>M</td>
+      <td>8548</td>
+      <td>1889</td>
+      <td>0.077300</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1890</th>
+      <th>F</th>
+      <th>23086</th>
+      <td>John</td>
+      <td>F</td>
+      <td>56</td>
+      <td>1890</td>
+      <td>0.000294</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>24277</th>
+      <td>John</td>
+      <td>M</td>
+      <td>8502</td>
+      <td>1890</td>
+      <td>0.076577</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1891</th>
+      <th>F</th>
+      <th>25816</th>
+      <td>John</td>
+      <td>F</td>
+      <td>44</td>
+      <td>1891</td>
+      <td>0.000237</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>26971</th>
+      <td>John</td>
+      <td>M</td>
+      <td>7680</td>
+      <td>1891</td>
+      <td>0.075895</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1892</th>
+      <th>F</th>
+      <th>28460</th>
+      <td>John</td>
+      <td>F</td>
+      <td>54</td>
+      <td>1892</td>
+      <td>0.000254</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>29759</th>
+      <td>John</td>
+      <td>M</td>
+      <td>9039</td>
+      <td>1892</td>
+      <td>0.074068</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1893</th>
+      <th>F</th>
+      <th>31361</th>
+      <td>John</td>
+      <td>F</td>
+      <td>61</td>
+      <td>1893</td>
+      <td>0.000287</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>32671</th>
+      <td>John</td>
+      <td>M</td>
+      <td>8049</td>
+      <td>1893</td>
+      <td>0.071663</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1894</th>
+      <th>F</th>
+      <th>34211</th>
+      <td>John</td>
+      <td>F</td>
+      <td>60</td>
+      <td>1894</td>
+      <td>0.000269</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>35552</th>
+      <td>John</td>
+      <td>M</td>
+      <td>8238</td>
+      <td>1894</td>
+      <td>0.071158</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <th>M</th>
+      <th>1015237</th>
+      <td>John</td>
+      <td>M</td>
+      <td>29535</td>
+      <td>1987</td>
+      <td>0.015830</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1988</th>
+      <th>F</th>
+      <th>1024361</th>
+      <td>John</td>
+      <td>F</td>
+      <td>167</td>
+      <td>1988</td>
+      <td>0.000094</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <th>1037259</th>
+      <td>John</td>
+      <td>M</td>
+      <td>29394</td>
+      <td>1988</td>
+      <td>0.015367</td>
+    </tr>
+    <tr>
+      <th>1989</th>
+      <th>M</th>
+      <th>1060288</th>
+      <td>John</td>
+      <td>M</td>
+      <td>29838</td>
+      <td>1989</td>
+      <td>0.014918</td>
+    </tr>
+    <tr>
+      <th>1990</th>
+      <th>M</th>
+      <th>1084747</th>
+      <td>John</td>
+      <td>M</td>
+      <td>29066</td>
+      <td>1990</td>
+      <td>0.014160</td>
+    </tr>
+    <tr>
+      <th>1991</th>
+      <th>M</th>
+      <th>1109686</th>
+      <td>John</td>
+      <td>M</td>
+      <td>27798</td>
+      <td>1991</td>
+      <td>0.013765</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <th>M</th>
+      <th>1134943</th>
+      <td>John</td>
+      <td>M</td>
+      <td>26241</td>
+      <td>1992</td>
+      <td>0.013144</td>
+    </tr>
+    <tr>
+      <th>1993</th>
+      <th>M</th>
+      <th>1160554</th>
+      <td>John</td>
+      <td>M</td>
+      <td>24989</td>
+      <td>1993</td>
+      <td>0.012746</td>
+    </tr>
+    <tr>
+      <th>1994</th>
+      <th>M</th>
+      <th>1186469</th>
+      <td>John</td>
+      <td>M</td>
+      <td>24175</td>
+      <td>1994</td>
+      <td>0.012517</td>
+    </tr>
+    <tr>
+      <th>1995</th>
+      <th>M</th>
+      <th>1212466</th>
+      <td>John</td>
+      <td>M</td>
+      <td>23232</td>
+      <td>1995</td>
+      <td>0.012208</td>
+    </tr>
+    <tr>
+      <th>1996</th>
+      <th>M</th>
+      <th>1238683</th>
+      <td>John</td>
+      <td>M</td>
+      <td>22169</td>
+      <td>1996</td>
+      <td>0.011708</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <th>M</th>
+      <th>1265371</th>
+      <td>John</td>
+      <td>M</td>
+      <td>21372</td>
+      <td>1997</td>
+      <td>0.011342</td>
+    </tr>
+    <tr>
+      <th>1998</th>
+      <th>M</th>
+      <th>1292776</th>
+      <td>John</td>
+      <td>M</td>
+      <td>20615</td>
+      <td>1998</td>
+      <td>0.010791</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <th>M</th>
+      <th>1321012</th>
+      <td>John</td>
+      <td>M</td>
+      <td>20341</td>
+      <td>1999</td>
+      <td>0.010600</td>
+    </tr>
+    <tr>
+      <th>2000</th>
+      <th>M</th>
+      <th>1350272</th>
+      <td>John</td>
+      <td>M</td>
+      <td>20084</td>
+      <td>2000</td>
+      <td>0.010234</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <th>M</th>
+      <th>1380350</th>
+      <td>John</td>
+      <td>M</td>
+      <td>18879</td>
+      <td>2001</td>
+      <td>0.009724</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <th>M</th>
+      <th>1410730</th>
+      <td>John</td>
+      <td>M</td>
+      <td>17442</td>
+      <td>2002</td>
+      <td>0.008991</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <th>M</th>
+      <th>1441635</th>
+      <td>John</td>
+      <td>M</td>
+      <td>17222</td>
+      <td>2003</td>
+      <td>0.008726</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <th>M</th>
+      <th>1473212</th>
+      <td>John</td>
+      <td>M</td>
+      <td>16439</td>
+      <td>2004</td>
+      <td>0.008290</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <th>M</th>
+      <th>1505607</th>
+      <td>John</td>
+      <td>M</td>
+      <td>15760</td>
+      <td>2005</td>
+      <td>0.007899</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <th>M</th>
+      <th>1539014</th>
+      <td>John</td>
+      <td>M</td>
+      <td>15153</td>
+      <td>2006</td>
+      <td>0.007382</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <th>M</th>
+      <th>1573596</th>
+      <td>John</td>
+      <td>M</td>
+      <td>14424</td>
+      <td>2007</td>
+      <td>0.006960</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <th>M</th>
+      <th>1608427</th>
+      <td>John</td>
+      <td>M</td>
+      <td>13310</td>
+      <td>2008</td>
+      <td>0.006535</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <th>M</th>
+      <th>1643211</th>
+      <td>John</td>
+      <td>M</td>
+      <td>12103</td>
+      <td>2009</td>
+      <td>0.006113</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <th>M</th>
+      <th>1677534</th>
+      <td>John</td>
+      <td>M</td>
+      <td>11543</td>
+      <td>2010</td>
+      <td>0.006029</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <th>M</th>
+      <th>1711330</th>
+      <td>John</td>
+      <td>M</td>
+      <td>11027</td>
+      <td>2011</td>
+      <td>0.005821</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <th>M</th>
+      <th>1745139</th>
+      <td>John</td>
+      <td>M</td>
+      <td>10607</td>
+      <td>2012</td>
+      <td>0.005610</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <th>M</th>
+      <th>1778561</th>
+      <td>John</td>
+      <td>M</td>
+      <td>10687</td>
+      <td>2013</td>
+      <td>0.005673</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <th>M</th>
+      <th>1811736</th>
+      <td>John</td>
+      <td>M</td>
+      <td>10659</td>
+      <td>2014</td>
+      <td>0.005578</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <th>M</th>
+      <th>1844755</th>
+      <td>John</td>
+      <td>M</td>
+      <td>10303</td>
+      <td>2015</td>
+      <td>0.005426</td>
+    </tr>
+  </tbody>
+</table>
+<p>245 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>Which names are the most popular of all time?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">total_births</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name
+James          5142912.0
+John           5116313.0
+Robert         4822265.0
+Michael        4343106.0
+Mary           4131873.0
+William        4086383.0
+David          3600738.0
+Joseph         2589732.0
+Richard        2565300.0
+Charles        2381863.0
+Thomas         2295502.0
+Christopher    2011702.0
+Daniel         1886299.0
+Elizabeth      1613326.0
+Patricia       1574798.0
+Matthew        1569338.0
+Jennifer       1467548.0
+George         1465334.0
+Linda          1454380.0
+Barbara        1436646.0
+Anthony        1417510.0
+Donald         1412138.0
+Paul           1385235.0
+Mark           1347586.0
+Edward         1286089.0
+Steven         1276499.0
+Kenneth        1269967.0
+Andrew         1267471.0
+Margaret       1244662.0
+Joshua         1187636.0
+                 ...    
+Amado                5.0
+Pryor                5.0
+Laban                5.0
+Sheppard             5.0
+Vinia                5.0
+Tella                5.0
+Tilford              5.0
+Estie                5.0
+Jep                  5.0
+Ollis                5.0
+Clide                5.0
+Tilmon               5.0
+Affie                5.0
+Lovisa               5.0
+Alys                 5.0
+Etter                5.0
+Lenzy                5.0
+Maryland             5.0
+Orlie                5.0
+Orr                  5.0
+Lovey                5.0
+Mathis               5.0
+Orva                 5.0
+Matthews             5.0
+Mattye               5.0
+Voyle                5.0
+Fronnie              5.0
+Cordella             5.0
+Bertina              5.0
+Manervia             5.0
+Length: 7062, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s plot naming trends, for a few of the most popular names</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span> <span class="o">=</span> <span class="n">total_births</span><span class="p">[[</span><span class="s2">&quot;Michael&quot;</span><span class="p">,</span> <span class="s2">&quot;Jennifer&quot;</span><span class="p">]]</span>
+<span class="n">subset</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f781bf63978&gt;
+</pre></div>
+</div>
+<img alt="../_images/pandas-babynames_44_1.png" src="../_images/pandas-babynames_44_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="q3-unique-names">
+<h2>Q3: unique names<a class="headerlink" href="#q3-unique-names" title="Permalink to this headline">¶</a></h2>
+<p>how many unique names appear in our top 1000 list?  Use the <code class="docutils literal notranslate"><span class="pre">.unique()</span></code> method on the “name” <code class="docutils literal notranslate"><span class="pre">Series</span></code> to get a an array (it will actually be a NumPy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> of objects)</p>
+</div>
+<div class="section" id="q4-gender-neutral-names">
+<h2>Q4: gender neutral names<a class="headerlink" href="#q4-gender-neutral-names" title="Permalink to this headline">¶</a></h2>
+<p>What are all the names that appear for both boys and girls?</p>
+</div>
+<div class="section" id="q5-name-diversity">
+<h2>Q5: name diversity<a class="headerlink" href="#q5-name-diversity" title="Permalink to this headline">¶</a></h2>
+<p>We want to make a plot of how many names it takes to reach 50% of the births in a given year.  Let’s start with the boys names:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boys</span> <span class="o">=</span> <span class="n">top</span><span class="p">[</span><span class="n">top</span><span class="o">.</span><span class="n">sex</span> <span class="o">==</span> <span class="s2">&quot;M&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, to understand the process, let’s work just on a particular year, 2015</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b15</span> <span class="o">=</span> <span class="n">boys</span><span class="p">[</span><span class="n">boys</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="mi">2015</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b15</span><span class="o">.</span><span class="n">info</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;bound method DataFrame.info of                        name sex  births  year      prop
+year sex                                               
+2015 M   1844730       Noah   M   19511  2015  0.010275
+         1844731       Liam   M   18281  2015  0.009627
+         1844732      Mason   M   16535  2015  0.008708
+         1844733      Jacob   M   15816  2015  0.008329
+         1844734    William   M   15809  2015  0.008326
+         1844735      Ethan   M   14991  2015  0.007895
+         1844736      James   M   14705  2015  0.007744
+         1844737  Alexander   M   14460  2015  0.007615
+         1844738    Michael   M   14321  2015  0.007542
+         1844739   Benjamin   M   13608  2015  0.007166
+         1844740     Elijah   M   13511  2015  0.007115
+         1844741     Daniel   M   13408  2015  0.007061
+         1844742      Aiden   M   13378  2015  0.007045
+         1844743      Logan   M   12862  2015  0.006774
+         1844744    Matthew   M   12648  2015  0.006661
+         1844745      Lucas   M   12246  2015  0.006449
+         1844746    Jackson   M   12182  2015  0.006415
+         1844747      David   M   11691  2015  0.006157
+         1844748     Oliver   M   11592  2015  0.006105
+         1844749     Jayden   M   11475  2015  0.006043
+         1844750     Joseph   M   11375  2015  0.005990
+         1844751    Gabriel   M   10782  2015  0.005678
+         1844752     Samuel   M   10733  2015  0.005652
+         1844753     Carter   M   10727  2015  0.005649
+         1844754    Anthony   M   10564  2015  0.005563
+         1844755       John   M   10303  2015  0.005426
+         1844756      Dylan   M   10232  2015  0.005389
+         1844757       Luke   M   10219  2015  0.005382
+         1844758      Henry   M   10112  2015  0.005325
+         1844759     Andrew   M   10027  2015  0.005281
+...                     ...  ..     ...   ...       ...
+         1845703     Yadiel   M     211  2015  0.000111
+         1845704      Yahya   M     211  2015  0.000111
+         1845700     Aarush   M     211  2015  0.000111
+         1845702      Robin   M     211  2015  0.000111
+         1845701   Deangelo   M     211  2015  0.000111
+         1845705      Boden   M     209  2015  0.000110
+         1845707        Kye   M     209  2015  0.000110
+         1845708      Kylen   M     209  2015  0.000110
+         1845709       Todd   M     209  2015  0.000110
+         1845710     Truman   M     209  2015  0.000110
+         1845706        Ean   M     209  2015  0.000110
+         1845712    Gilbert   M     208  2015  0.000110
+         1845713     Haiden   M     208  2015  0.000110
+         1845711      Chevy   M     208  2015  0.000110
+         1845715    Dangelo   M     207  2015  0.000109
+         1845716      Juelz   M     207  2015  0.000109
+         1845717    Osvaldo   M     207  2015  0.000109
+         1845714    Brixton   M     207  2015  0.000109
+         1845718     Bishop   M     206  2015  0.000108
+         1845719     Freddy   M     206  2015  0.000108
+         1845720     Reagan   M     206  2015  0.000108
+         1845721    Frankie   M     205  2015  0.000108
+         1845722     Malaki   M     205  2015  0.000108
+         1845725    Jayvion   M     204  2015  0.000107
+         1845726      Leroy   M     204  2015  0.000107
+         1845724    Deshawn   M     204  2015  0.000107
+         1845723     Camren   M     204  2015  0.000107
+         1845728     Jaydon   M     203  2015  0.000107
+         1845727      Briar   M     203  2015  0.000107
+         1845730       Ayan   M     202  2015  0.000106
+
+[1000 rows x 5 columns]&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll use the <code class="docutils literal notranslate"><span class="pre">cumsum()</span></code> property to do a cumulative sum over the <code class="docutils literal notranslate"><span class="pre">prop</span></code> column we added previously</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prop_cumsum</span> <span class="o">=</span> <span class="n">b15</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;prop&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;prop&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and now we can use <code class="docutils literal notranslate"><span class="pre">searchsorted</span></code> to return the position where “if the corresponding elements in v were inserted before the indices, the order of self would be preserved.” (see <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.searchsorted.html">http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.searchsorted.html</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prop_cumsum</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([134])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since we start counting at 0, we add 1 to this to get the number of names needed in this year to reach 50% of births.</p>
+<p>Now generalize this to a function that you can use <code class="docutils literal notranslate"><span class="pre">apply()</span></code> on and make a plot of the number of names to reach 50% by year</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./07-pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By <a href="https://zingale.github.io">Michael Zingale</a><br/>
+    
+      <div class="extra_footer">
+        <p>
+&copy; 2022; CC-BY-NC-SA 4.0
+<p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
